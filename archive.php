@@ -1,5 +1,5 @@
 <?php
-$page_data = new TRP_Post_Single();
+$page_data = new TRP_Post_Archive();
 get_header();
 ?>
 
