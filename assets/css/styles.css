@@ -48,9 +48,31 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 @media only screen and (min-width : 1200px) { }
 
 /*-------------------------
+	heading
+---------------------------*/
+.heading {  }
+.heading--footer-column {  }
+.heading--alt {  }
+
+@media only screen and (min-width : 480px) {  }
+@media only screen and (min-width : 768px) {  }
+@media only screen and (min-width : 992px) {  }
+@media only screen and (min-width : 1200px) {  }
+
+/*-------------------------
 	buttons
 ---------------------------*/
 .btn { text-decoration: none; }
+
+@media only screen and (min-width : 480px) {  }
+@media only screen and (min-width : 768px) {  }
+@media only screen and (min-width : 992px) {  }
+@media only screen and (min-width : 1200px) {  }
+
+/*-------------------------
+	user-generated
+---------------------------*/
+.user-generated {  }
 
 @media only screen and (min-width : 480px) {  }
 @media only screen and (min-width : 768px) {  }
@@ -92,9 +114,12 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 @media only screen and (min-width : 1200px) {  }
 
 /*-------------------------
-
+	hero
 ---------------------------*/
-
+.hero { background: rgba(55, 55, 55, 0.5) none no-repeat center center; background-size: cover; color: #FFF; background-blend-mode: multiply; }
+.hero__inner { display: flex; flex-direction: row; padding: 100px 0; }
+.hero__inner-block { width: 50%; }
+.hero__inner-content { width: 50%; }
 
 @media only screen and (min-width : 480px) {  }
 @media only screen and (min-width : 768px) {  }
@@ -102,9 +127,22 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 @media only screen and (min-width : 1200px) {  }
 
 /*-------------------------
-
+	pg-home
 ---------------------------*/
+.pg-home { background-color: #FFF; }
 
+.pg-home__spotlight {  }
+.pg-home__spotlight-content {  }
+.pg-home__spotlight-gallery {  }
+
+.pg-home__games { background-color: #EEE; }
+.pg-home__games-inner { display: flex; flex-direction: row; flex-wrap: wrap; }
+.pg-home__games-block { width: 33%; padding: 10px 0; }
+.pg-home__games-block-content {  }
+.pg-home__games-block-image {  }
+
+.pg-home__news { padding-bottom: 180px; }
+.pg-home__news-inner {  }
 
 @media only screen and (min-width : 480px) {  }
 @media only screen and (min-width : 768px) {  }
@@ -112,9 +150,14 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 @media only screen and (min-width : 1200px) {  }
 
 /*-------------------------
-
+	excerpt
 ---------------------------*/
-
+.excerpt { padding: 30px 0; }
+.excerpt__details {  }
+.excerpt__details-title {  }
+.excerpt__details-credits {  }
+.excerpt__details-credits-author {  }
+.excerpt__details-credits-date {  }
 
 @media only screen and (min-width : 480px) {  }
 @media only screen and (min-width : 768px) {  }

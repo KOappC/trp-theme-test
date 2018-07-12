@@ -3,7 +3,7 @@
 		<div class="footer__inner">
 			<img class="footer__logo" src="" alt="TRP Logo"/>
 			<div class="footer__column">
-				<h3>Games</h3>
+				<h3 class="heading heading--footer-column">Games</h3>
 				<ul class="footer__nav footer__nav--column">
 					<li class="footer__nav-item">
 						<a class="footer__nav-item-link" href="#">Ark</a>
@@ -21,7 +21,7 @@
 				</ul>
 			</div>
 			<div class="footer__column">
-				<h3>Community</h3>
+				<h3 class="heading heading--footer-column">Community</h3>
 				<ul class="footer__nav footer__nav--column">
 					<li class="footer__nav-item">
 						<a class="footer__nav-item-link" href="#">Events</a>
@@ -45,7 +45,7 @@
 				</ul>
 			</div>
 			<div class="footer__column">
-				<h3>Rules</h3>
+				<h3 class="heading heading--footer-column">Rules</h3>
 				<ul class="footer__nav footer__nav--column">
 					<li class="footer__nav-item">
 						<a class="footer__nav-item-link" href="#">Ark Rules</a>
