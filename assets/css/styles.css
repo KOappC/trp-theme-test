@@ -143,16 +143,25 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 	header
 ---------------------------*/
 .header { background-color: #CCC; }
-.header__inner { display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 10px 0; }
+.header__inner { display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 10px 0; position: relative; }
 .header__logo { max-height: 40px; width: auto; }
 .header__logo-link { max-height: 40px; width: auto; }
-.header__nav { display: flex; flex-direction: row; }
-.header__nav-item { margin: 0 25px;  }
+.header__nav { height: 0; transition: 0.3s; display: flex; overflow: hidden; }
+.header__nav--active { position: fixed; height: 100%; width: 100%; background-color: #888; top: 0; left: 0; flex-direction: column; justify-content: flex-start; align-items: center; transition: 0.3s; }
+.header__nav-item { margin: 25px;  }
+
 .header__nav-item-link { text-decoration: none; font-size: 1.275rem; }
+
+.header__mobile-menu { width: 60px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.header__mobile-menu:after { content: '\f0c9'; font-family: 'fontAwesome'; font-size: 2rem; }
 
 @media only screen and (min-width : 480px) {  }
 @media only screen and (min-width : 768px) {
+	.header__nav { flex-direction: row; height: unset; }
 	.header__nav-item-link { font-size: 1.275rem; }
+	.header__nav-item { margin: 0 25px;  }
+	.header__mobile-menu { display: none; }
+	.header__mobile-menu:after { display: none; }
 }
 @media only screen and (min-width : 992px) {  }
 @media only screen and (min-width : 1200px) {  }
@@ -187,12 +196,12 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 	hero
 ---------------------------*/
 .hero { background: rgba(55, 55, 55, 0.5) none no-repeat center center; background-size: cover; color: #FFF; background-blend-mode: multiply; }
-.hero__inner { display: flex; flex-direction: column; padding: 100px 0; }
+.hero__inner { display: flex; flex-direction: column; padding: 80px 0; }
 .hero__inner-block { width: 100%; }
 
 @media only screen and (min-width : 480px) {  }
 @media only screen and (min-width : 768px) {
-	.hero__inner { flex-direction: row; }
+	.hero__inner { flex-direction: row; padding: 160px 0; }
 	.hero__inner-block { width: 50%; }
 }
 @media only screen and (min-width : 992px) {  }

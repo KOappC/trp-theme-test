@@ -13,7 +13,7 @@
 					<a class="header__nav-item-link" href="#">Games</a>
 				</li>
 				<li class="header__nav-item">
-					<a class="header__nav-item-link" href="#">News</a>
+					<a class="header__nav-item-link" href="http://google.com">News</a>
 				</li>
 				<li class="header__nav-item">
 					<a class="header__nav-item-link" href="#">Rules</a>
@@ -27,6 +27,7 @@
 			]); */?>-->
 			</ul>
 			<a class="btn btn--header" href="#"><?php echo get_theme_mod('header-btn-text'); ?></a>
+			<button type="button" class="header__mobile-menu"></button>
 		</div>
 	</div>
 </div>
