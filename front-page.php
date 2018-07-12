@@ -9,8 +9,9 @@ get_header();
 
 <div class="pg-home">
 	<div class="container">
-		<div></div>
-		<div></div>
+		<div class="spotlight"></div>
+
+		<div class="news"></div>
 	</div>
 </div>
 
