@@ -6,13 +6,13 @@ $page_data = new TRP_Homepage_Page();
 get_header();
 ?>
 
-<div class="hero" style="background-image: url('http://twitchrp.com/wp-content/uploads/2016/12/ca20678f0dcee0f35f3c022636d9ef95a826651c.jpg')">
+<div class="hero" style="background-image: url('<?php echo $page_data->get_hero_image(); ?>')">
 	<div class="container">
 		<div class="hero__inner">
 			<div class="hero__inner-block"></div>
-			<div class="hero__inner-content user-generated-content">
-				<h1>TRP. Your new home.</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis metus fringilla, placerat sapien at, maximus odio. Nam ultrices mollis laoreet. Cras quis erat viverra, aliquet purus nec, auctor nisi. Cras vulputate sit amet lorem sed lacinia. Proin ultricies porttitor blandit. Nunc gravida ligula eu leo pulvinar, id imperdiet metus fringilla. Aenean blandit ultrices eros molestie blandit.</p>
+			<div class="hero__inner-block user-generated-content">
+				<h1><?php echo $page_data->get_hero_heading(); ?></h1>
+				<p><?php echo $page_data->get_content(); ?></p>
 			</div>
 		</div>
 	</div>
@@ -20,36 +20,52 @@ get_header();
 
 <div class="pg-home">
 	<div class="pg-home__spotlight">
-		<div class="container">
-			<div class="pg-home__spotlight-inner">
-				<div class="pg-home__spotlight-block user-generated-content">
-					<h2>Our Mission</h2>
-					<p>Phasellus sagittis felis in eleifend cursus. Duis molestie lorem a urna rhoncus convallis. Sed eu ante odio. Aenean ut molestie metus, eget semper nibh. Ut ex ante, auctor at feugiat a, euismod vel ligula. Donec tristique est eu felis venenatis, eu facilisis turpis interdum. Fusce molestie eget est sed accumsan. Etiam urna orci, gravida a tempor a, cursus ultricies elit. Cras sed tincidunt est. Donec a nulla efficitur, vehicula purus eu, molestie orci. Etiam lobortis, risus eu commodo faucibus, odio nisl vulputate velit, id elementum est ligula sed massa. Cras nec tempor enim.</p>
-				</div>
-				<div class="pg-home__spotlight-block">
-					<img class="pg-home__spotlight-block-image" src="" alt="" />
-				</div>
+		<div class="pg-home__spotlight-inner">
+			<div class="pg-home__spotlight-block pg-home__spotlight-block--text user-generated-content">
+				<h2><?php echo $page_data->get_spotlight_heading(); ?></h2>
+				<p><?php echo $page_data->get_spotlight_content(); ?></p>
+			</div>
+			<div class="pg-home__spotlight-block">
+				<div class="pg-home__spotlight-block-image" style="background-image: url('<?php echo $page_data->get_spotlight_image(); ?>')"></div>
 			</div>
 		</div>
 	</div>
 	<div class="pg-home__games">
 		<div class="container">
 			<div class="pg-home__games-inner">
-				<div class="pg-home__games-block">
-					<img class="pg-home__games-block-image" src="" alt=""/>
-					<h2 class="heading heading--alt">Ark: Survival Evolved</h2>
-					<div class="pg-home__games-block-content user-generated-content">In commodo enim ante, quis blandit massa vehicula quis. Proin mattis mattis metus, sit amet mattis mi. Curabitur eu consequat nibh, quis consectetur felis. Maecenas quis consectetur lorem.</div>
-				</div>
-				<div class="pg-home__games-block">
-					<img class="pg-home__games-block-image" src="" alt=""/>
-					<h2 class="heading heading--alt">Grand Theft Auto 5</h2>
-					<div class="pg-home__games-block-content user-generated-content">In commodo enim ante, quis blandit massa vehicula quis. Proin mattis mattis metus, sit amet mattis mi. Curabitur eu consequat nibh, quis consectetur felis. Maecenas quis consectetur lorem.</div>
-				</div>
-				<div class="pg-home__games-block">
-					<img class="pg-home__games-block-image" src="" alt=""/>
-					<h2 class="heading heading--alt">Conan Exiles</h2>
-					<div class="pg-home__games-block-content user-generated-content">In commodo enim ante, quis blandit massa vehicula quis. Proin mattis mattis metus, sit amet mattis mi. Curabitur eu consequat nibh, quis consectetur felis. Maecenas quis consectetur lorem.</div>
-				</div>
+				<?php if(!empty($page_data->get_game_one_heading())) { ?>
+					<div class="pg-home__games-block">
+						<?php if(!empty($page_data->get_game_one_image())) { ?>
+							<div class="pg-home__games-block-image" style="background-image: url('<?php echo $page_data->get_game_one_image(); ?>')"></div>
+						<?php } ?>
+						<h2 class="heading heading--alt heading--games-block"><?php echo $page_data->get_game_one_heading(); ?></h2>
+						<?php if(!empty($page_data->get_game_one_content())) { ?>
+							<div class="pg-home__games-block-content user-generated-content"><?php echo $page_data->get_game_one_content(); ?></div>
+						<?php } ?>
+					</div>
+				<?php } ?>
+				<?php if(!empty($page_data->get_game_two_heading())) { ?>
+					<div class="pg-home__games-block">
+						<?php if(!empty($page_data->get_game_two_image())) { ?>
+							<div class="pg-home__games-block-image" style="background-image: url('<?php echo $page_data->get_game_two_image(); ?>')"></div>
+						<?php } ?>
+						<h2 class="heading heading--alt heading--games-block"><?php echo $page_data->get_game_two_heading(); ?></h2>
+						<?php if(!empty($page_data->get_game_two_content())) { ?>
+							<div class="pg-home__games-block-content user-generated-content"><?php echo $page_data->get_game_two_content(); ?></div>
+						<?php } ?>
+					</div>
+				<?php } ?>
+				<?php if(!empty($page_data->get_game_three_heading())) { ?>
+					<div class="pg-home__games-block">
+						<?php if(!empty($page_data->get_game_three_image())) { ?>
+							<div class="pg-home__games-block-image" style="background-image: url('<?php echo $page_data->get_game_three_image(); ?>')"></div>
+						<?php } ?>
+						<h2 class="heading heading--alt heading--games-block"><?php echo $page_data->get_game_three_heading(); ?></h2>
+						<?php if(!empty($page_data->get_game_three_content())) { ?>
+							<div class="pg-home__games-block-content user-generated-content"><?php echo $page_data->get_game_three_content(); ?></div>
+						<?php } ?>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -58,37 +74,45 @@ get_header();
 			<div class="pg-home__news-inner">
 				<h1 class="heading">News</h1>
 				<div class="excerpt">
-					<div class="excerpt__image" style="background-image: url('')"></div>
-					<div class="excerpt__details">
-						<h3 class="excerpt__details-title">News Article Title</h3>
-						<div class="excerpt__details-credits">
-							<h4 class="excerpt__details-credits-author">Bob Blogwriter</h4>
-							<p class="excerpt__details-credits-date">July 12th, 2018</p>
+					<div class="excerpt__image" style="background-image: url('//static1.squarespace.com/static/568e2c9925981db074af4a32/568e342169492e195466ac69/5695950c841aba21e9dee64f/1452643644577/?format=1500w')"></div>
+					<div class="excerpt__block">
+						<div class="excerpt__details">
+							<h3 class="excerpt__details-title">News Article Title</h3>
+							<div class="excerpt__details-credits">
+								<h4 class="excerpt__details-credits-author">Bob Blogwriter</h4>
+								<p class="excerpt__details-credits-date">July 12th, 2018</p>
+							</div>
 						</div>
+						<div class="excerpt__content user-generated-content">Morbi dapibus tortor quis risus venenatis, nec gravida est finibus. Sed ornare fermentum arcu, quis vestibulum tortor volutpat in. Donec turpis massa, bibendum sit amet dui vitae, tempus faucibus tellus. Morbi finibus mollis neque in dignissim. Suspendisse tempor dignissim mauris scelerisque finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque quam nisl, vestibulum ac ipsum id, facilisis consequat lectus. Aenean vestibulum, orci et posuere dapibus, mi augue tincidunt erat, sit amet molestie mauris urna eget nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed laoreet urna id lectus interdum, ut dignissim nunc vulputate. Donec facilisis iaculis tellus eu tempor. Nulla at nulla nec lectus interdum ullamcorper. Vivamus euismod quis magna vitae consequat. Sed elementum vehicula sapien feugiat iaculis. Vivamus consequat sem in massa congue, id rutrum augue porttitor. </div>
 					</div>
-					<div class="excerpt__content user-generated-content">Morbi dapibus tortor quis risus venenatis, nec gravida est finibus. Sed ornare fermentum arcu, quis vestibulum tortor volutpat in. Donec turpis massa, bibendum sit amet dui vitae, tempus faucibus tellus. Morbi finibus mollis neque in dignissim. Suspendisse tempor dignissim mauris scelerisque finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque quam nisl, vestibulum ac ipsum id, facilisis consequat lectus. Aenean vestibulum, orci et posuere dapibus, mi augue tincidunt erat, sit amet molestie mauris urna eget nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed laoreet urna id lectus interdum, ut dignissim nunc vulputate. Donec facilisis iaculis tellus eu tempor. Nulla at nulla nec lectus interdum ullamcorper. Vivamus euismod quis magna vitae consequat. Sed elementum vehicula sapien feugiat iaculis. Vivamus consequat sem in massa congue, id rutrum augue porttitor. </div>
 				</div>
 				<div class="excerpt">
-					<div class="excerpt__image" style="background-image: url('')"></div>
-					<div class="excerpt__details">
-						<h3 class="excerpt__details-title">News Article Title</h3>
-						<div class="excerpt__details-credits">
-							<h4 class="excerpt__details-credits-author">Bob Blogwriter</h4>
-							<p class="excerpt__details-credits-date">July 12th, 2018</p>
+					<!-- hide with php if there is no featured image -->
+					<!--<div class="excerpt__image" style="background-image: url('')"></div>-->
+					<div class="excerpt__block">
+						<div class="excerpt__details">
+							<h3 class="excerpt__details-title">News Article Title</h3>
+							<div class="excerpt__details-credits">
+								<h4 class="excerpt__details-credits-author">Bob Blogwriter</h4>
+								<p class="excerpt__details-credits-date">July 12th, 2018</p>
+							</div>
 						</div>
+						<div class="excerpt__content user-generated-content">Morbi dapibus tortor quis risus venenatis, nec gravida est finibus. Sed ornare fermentum arcu, quis vestibulum tortor volutpat in. Donec turpis massa, bibendum sit amet dui vitae, tempus faucibus tellus. Morbi finibus mollis neque in dignissim. Suspendisse tempor dignissim mauris scelerisque finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque quam nisl, vestibulum ac ipsum id, facilisis consequat lectus. Aenean vestibulum, orci et posuere dapibus, mi augue tincidunt erat, sit amet molestie mauris urna eget nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed laoreet urna id lectus interdum, ut dignissim nunc vulputate. Donec facilisis iaculis tellus eu tempor. Nulla at nulla nec lectus interdum ullamcorper. Vivamus euismod quis magna vitae consequat. Sed elementum vehicula sapien feugiat iaculis. Vivamus consequat sem in massa congue, id rutrum augue porttitor. </div>
 					</div>
-					<div class="excerpt__content user-generated-content">Morbi dapibus tortor quis risus venenatis, nec gravida est finibus. Sed ornare fermentum arcu, quis vestibulum tortor volutpat in. Donec turpis massa, bibendum sit amet dui vitae, tempus faucibus tellus. Morbi finibus mollis neque in dignissim. Suspendisse tempor dignissim mauris scelerisque finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque quam nisl, vestibulum ac ipsum id, facilisis consequat lectus. Aenean vestibulum, orci et posuere dapibus, mi augue tincidunt erat, sit amet molestie mauris urna eget nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed laoreet urna id lectus interdum, ut dignissim nunc vulputate. Donec facilisis iaculis tellus eu tempor. Nulla at nulla nec lectus interdum ullamcorper. Vivamus euismod quis magna vitae consequat. Sed elementum vehicula sapien feugiat iaculis. Vivamus consequat sem in massa congue, id rutrum augue porttitor. </div>
 				</div>
 				<div class="excerpt">
-					<div class="excerpt__image" style="background-image: url('')"></div>
-					<div class="excerpt__details">
-						<h3 class="excerpt__details-title">News Article Title</h3>
-						<div class="excerpt__details-credits">
-							<h4 class="excerpt__details-credits-author">Bob Blogwriter</h4>
-							<p class="excerpt__details-credits-date">July 12th, 2018</p>
+					<!-- hide with php if there is no featured image -->
+					<!--<div class="excerpt__image" style="background-image: url('')"></div>-->
+					<div class="excerpt__block">
+						<div class="excerpt__details">
+							<h3 class="excerpt__details-title">News Article Title</h3>
+							<div class="excerpt__details-credits">
+								<h4 class="excerpt__details-credits-author">Bob Blogwriter</h4>
+								<p class="excerpt__details-credits-date">July 12th, 2018</p>
+							</div>
 						</div>
+						<div class="excerpt__content user-generated-content">Morbi dapibus tortor quis risus venenatis, nec gravida est finibus. Sed ornare fermentum arcu, quis vestibulum tortor volutpat in. Donec turpis massa, bibendum sit amet dui vitae, tempus faucibus tellus. Morbi finibus mollis neque in dignissim. Suspendisse tempor dignissim mauris scelerisque finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque quam nisl, vestibulum ac ipsum id, facilisis consequat lectus. Aenean vestibulum, orci et posuere dapibus, mi augue tincidunt erat, sit amet molestie mauris urna eget nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed laoreet urna id lectus interdum, ut dignissim nunc vulputate. Donec facilisis iaculis tellus eu tempor. Nulla at nulla nec lectus interdum ullamcorper. Vivamus euismod quis magna vitae consequat. Sed elementum vehicula sapien feugiat iaculis. Vivamus consequat sem in massa congue, id rutrum augue porttitor. </div>
 					</div>
-					<div class="excerpt__content user-generated-content">Morbi dapibus tortor quis risus venenatis, nec gravida est finibus. Sed ornare fermentum arcu, quis vestibulum tortor volutpat in. Donec turpis massa, bibendum sit amet dui vitae, tempus faucibus tellus. Morbi finibus mollis neque in dignissim. Suspendisse tempor dignissim mauris scelerisque finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque quam nisl, vestibulum ac ipsum id, facilisis consequat lectus. Aenean vestibulum, orci et posuere dapibus, mi augue tincidunt erat, sit amet molestie mauris urna eget nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed laoreet urna id lectus interdum, ut dignissim nunc vulputate. Donec facilisis iaculis tellus eu tempor. Nulla at nulla nec lectus interdum ullamcorper. Vivamus euismod quis magna vitae consequat. Sed elementum vehicula sapien feugiat iaculis. Vivamus consequat sem in massa congue, id rutrum augue porttitor. </div>
 				</div>
 			</div>
 		</div>

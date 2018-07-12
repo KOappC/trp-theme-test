@@ -53,6 +53,7 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 .heading { font-size: 1.275rem; }
 .heading--footer-column { font-size: 1.125rem; }
 .heading--alt { font-size: 1.125rem;  }
+.heading--games-block { padding: 20px 0; text-align: center; }
 
 @media only screen and (min-width : 480px) {  }
 @media only screen and (min-width : 768px) {
@@ -67,11 +68,13 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 	buttons
 ---------------------------*/
 .btn { text-decoration: none; padding: 10px 20px; border: 1px solid #999; border-radius: 2px; background-color: #bbb; }
-.btn--header { padding: 5px 20px; }
+.btn--header { display: none; padding: 5px 20px; }
 .btn--footer { margin-bottom: 20px; }
 
 @media only screen and (min-width : 480px) {  }
-@media only screen and (min-width : 768px) {  }
+@media only screen and (min-width : 768px) {
+	.btn--header { display: block; }
+}
 @media only screen and (min-width : 992px) {  }
 @media only screen and (min-width : 1200px) {  }
 
@@ -158,18 +161,25 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 	footer
 ---------------------------*/
 .footer { background-color: #BBB; }
-.footer__inner { display: flex; flex-direction: row; justify-content: space-between; padding: 40px 0; }
-.footer__logo { max-width: 15%; height: auto; }
+.footer__inner { display: flex; flex-direction: column; justify-content: space-between; padding: 40px 0; }
+.footer__logo { width: 100%; }
 .footer__nav { display: flex; flex-direction: column; }
 .footer__nav-item {  }
 .footer__nav-item-link { text-decoration: none; }
-.footer__contact { display: flex; flex-direction: column; }
+.footer__contact { display: flex; flex-direction: column; margin: 40px 0 20px 0; }
+.footer__column { display: none; }
 .footer__bottom-bar { background-color: #999; }
 .footer__legal { padding: 10px 0; }
 .footer__copyright {  }
 
-@media only screen and (min-width : 480px) {  }
-@media only screen and (min-width : 768px) {  }
+@media only screen and (min-width : 480px) {
+	.footer__inner { flex-direction: row; }
+	.footer__logo { max-width: 165px; height: auto; }
+}
+@media only screen and (min-width : 768px) {
+	.footer__column { display: block; }
+	.footer__contact { margin: 0; }
+}
 @media only screen and (min-width : 992px) {  }
 @media only screen and (min-width : 1200px) {  }
 
@@ -177,12 +187,14 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 	hero
 ---------------------------*/
 .hero { background: rgba(55, 55, 55, 0.5) none no-repeat center center; background-size: cover; color: #FFF; background-blend-mode: multiply; }
-.hero__inner { display: flex; flex-direction: row; padding: 100px 0; }
-.hero__inner-block { width: 50%; }
-.hero__inner-content { width: 50%; }
+.hero__inner { display: flex; flex-direction: column; padding: 100px 0; }
+.hero__inner-block { width: 100%; }
 
 @media only screen and (min-width : 480px) {  }
-@media only screen and (min-width : 768px) {  }
+@media only screen and (min-width : 768px) {
+	.hero__inner { flex-direction: row; }
+	.hero__inner-block { width: 50%; }
+}
 @media only screen and (min-width : 992px) {  }
 @media only screen and (min-width : 1200px) {  }
 
@@ -192,34 +204,50 @@ body { font-size: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 .pg-home { background-color: #FFF; }
 
 .pg-home__spotlight {  }
-.pg-home__spotlight-inner { display: flex; flex-direction: row; padding: 60px 0; }
-.pg-home__spotlight-block { width: 50%; }
+.pg-home__spotlight-inner { display: flex; flex-direction: column; }
+.pg-home__spotlight-block { width: 100%; }
+.pg-home__spotlight-block--text { padding: 60px 20px; }
+.pg-home__spotlight-block-image { width: 100%; height: 0; padding-top: 50%; background: transparent none no-repeat center center; background-size: cover; }
 
 .pg-home__games { background-color: #EEE; }
-.pg-home__games-inner { display: flex; flex-direction: row; flex-wrap: wrap; padding: 60px 0; }
-.pg-home__games-block { width: 33%; padding: 10px 0; }
-.pg-home__games-block-image { padding-bottom: 20px; }
-.pg-home__games-block-content {  }
+.pg-home__games-inner { display: flex; flex-direction: column; flex-wrap: wrap; padding: 60px 0; }
+.pg-home__games-block { width: 100%; padding: 10px 0; }
+.pg-home__games-block-image { width: 100%; height: 0; padding-top: 50%; background: transparent none no-repeat center center; background-size: contain; margin-bottom: 20px; }
+.pg-home__games-block-content { text-align: center; padding: 0 10px; }
 
 .pg-home__news { padding-bottom: 120px; }
 .pg-home__news-inner { padding: 40px 0; }
 
 @media only screen and (min-width : 480px) {  }
-@media only screen and (min-width : 768px) {  }
+@media only screen and (min-width : 768px) {
+	.pg-home__spotlight-inner { flex-direction: row; }
+	.pg-home__spotlight-block { width: 50%; }
+	.pg-home__spotlight-block--text { padding: 60px 20px 60px 50px; }
+
+	.pg-home__games-inner { flex-direction: row; }
+	.pg-home__games-block { width: 33%; }
+}
 @media only screen and (min-width : 992px) {  }
 @media only screen and (min-width : 1200px) {  }
 
 /*-------------------------
 	excerpt
 ---------------------------*/
-.excerpt { padding: 30px 0; }
+.excerpt { padding: 30px 0; display: flex; flex-direction: column; }
+.excerpt__image { width: 100%; height: 175px; background: transparent none no-repeat center center; background-size: cover; margin-right: 40px; }
+.excerpt__block { width: 100%; margin-top: 20px; }
 .excerpt__details {  }
 .excerpt__details-title {  }
-.excerpt__details-credits { display: flex; flex-direction: row; }
+.excerpt__details-credits { display: flex; flex-direction: row; margin: 20px 0 10px 0; }
 .excerpt__details-credits-author { padding-right: 5px; border-right: 1px solid #AAA; margin-right: 5px; }
 .excerpt__details-credits-date {  }
 
 @media only screen and (min-width : 480px) {  }
-@media only screen and (min-width : 768px) {  }
+@media only screen and (min-width : 768px) {
+	.excerpt { flex-direction: row; }
+	.excerpt__image { width: 300px; height: auto; max-height: 200px; }
+	.excerpt__block { margin: 0; }
+	.excerpt__details-credits { margin: 0; }
+}
 @media only screen and (min-width : 992px) {  }
 @media only screen and (min-width : 1200px) {  }
