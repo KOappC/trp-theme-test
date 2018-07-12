@@ -2,7 +2,9 @@
 <div class="header">
 	<div class="container">
 		<div class="header__inner">
-			<img class="header__logo" src="" alt="TRP Logo"/>
+			<a class="header__logo-link" href="<?php echo get_home_url(); ?>">
+				<img class="header__logo" src="<?php echo get_theme_mod('header-logo-image'); ?>" alt="Logo"/>
+			</a>
 			<ul class="header__nav">
 				<li class="header__nav-item">
 					<a class="header__nav-item-link" href="#">Community</a>
@@ -24,7 +26,7 @@
 				'a_classes' => 'header__nav-item-link'
 			]); */?>-->
 			</ul>
-			<a class="btn" href="#">Apply</a>
+			<a class="btn btn--header" href="#"><?php echo get_theme_mod('header-btn-text'); ?></a>
 		</div>
 	</div>
 </div>

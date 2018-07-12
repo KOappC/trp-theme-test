@@ -2,6 +2,7 @@
 /**
  * Template Name: Homepage
  */
+$page_data = new TRP_Homepage_Page();
 get_header();
 ?>
 
@@ -55,6 +56,7 @@ get_header();
 	<div class="pg-home__news">
 		<div class="container">
 			<div class="pg-home__news-inner">
+				<h1 class="heading">News</h1>
 				<div class="excerpt">
 					<div class="excerpt__image" style="background-image: url('')"></div>
 					<div class="excerpt__details">

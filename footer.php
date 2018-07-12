@@ -1,9 +1,9 @@
 <div class="footer">
 	<div class="container">
 		<div class="footer__inner">
-			<img class="footer__logo" src="" alt="TRP Logo"/>
+			<img class="footer__logo" src="<?php echo get_theme_mod('footer-logo-image'); ?>" alt="Logo"/>
 			<div class="footer__column">
-				<h3 class="heading heading--footer-column">Games</h3>
+				<h3 class="heading heading--footer-column"><?php echo get_theme_mod('footer-nav-heading-one'); ?></h3>
 				<ul class="footer__nav footer__nav--column">
 					<li class="footer__nav-item">
 						<a class="footer__nav-item-link" href="#">Ark</a>
@@ -21,7 +21,7 @@
 				</ul>
 			</div>
 			<div class="footer__column">
-				<h3 class="heading heading--footer-column">Community</h3>
+				<h3 class="heading heading--footer-column"><?php echo get_theme_mod('footer-nav-heading-two'); ?></h3>
 				<ul class="footer__nav footer__nav--column">
 					<li class="footer__nav-item">
 						<a class="footer__nav-item-link" href="#">Events</a>
@@ -45,7 +45,7 @@
 				</ul>
 			</div>
 			<div class="footer__column">
-				<h3 class="heading heading--footer-column">Rules</h3>
+				<h3 class="heading heading--footer-column"><?php echo get_theme_mod('footer-nav-heading-three'); ?></h3>
 				<ul class="footer__nav footer__nav--column">
 					<li class="footer__nav-item">
 						<a class="footer__nav-item-link" href="#">Ark Rules</a>
