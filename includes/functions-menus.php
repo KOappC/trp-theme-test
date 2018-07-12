@@ -12,7 +12,9 @@ wp_nav_menu([
 // register menus
 if ( function_exists( 'register_nav_menus' ) ) {
 	register_nav_menus( [
-		'header-menu' => 'Header Menu',
-		'footer-menu' => 'Footer Menu'
+		'header-nav' => 'Header Nav',
+		'footer-one' => 'Footer One',
+		'footer-two' => 'Footer Two',
+		'footer-three' => 'Footer Three'
 	]);
 }
